@@ -8,7 +8,7 @@
 	# get core system updated & additional components
 sudo apt-get update
 sudo apt-get -y upgrade
-sudo apt-get install netcat openssl libpcre3 dnsmasq procps perl
+sudo apt-get -y install netcat openssl libpcre3 dnsmasq procps perl
 
 	# install postgresql & php based admin gui & prep DB for installation. ** NOTE: you should create the kongserver DB account with a stronger password
 sudo apt-get -y install postgresql postgresql-contrib phppgadmin

@@ -21,8 +21,9 @@ ALTER USER kongserver WITH password 'kongserver';
 	# Install latest version of Kong
 cd 
 sudo mkdir ./kong
+cd ./kong
 wget https://bintray.com/kong/kong-community-edition-deb/download_file?file_path=dists/kong-community-edition-0.13.1.xenial.all.deb kong-community-edition-0.13.1.xenial.all.deb
-sudo kong-community-edition-0.13.1.xenial.all.deb
+sudo dpkg -i ./kong-community-edition-0.13.1.xenial.all.deb
 sudo bash -c "echo -e 'pg_user = kongserver\npg_password = kongserver\npg_database = kong' > /etc/kong.conf"
 kong start -vv
 
@@ -54,7 +55,7 @@ end script
 ```
 
 	# install the npm package manager
-sudo apt-get install npm
+sudo apt-get -y install npm
 sudo npm install -g n@latest
 sudo n stable
 
